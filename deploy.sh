@@ -15,6 +15,7 @@ cp public/_redirects dist/_redirects
 cp public/web.config dist/web.config
 cp public/_headers dist/_headers
 cp nginx.conf dist/nginx.conf
+cp vercel.json dist/vercel.json
 
 # Verify build
 echo "Build completed. Files in dist directory:"
@@ -22,3 +23,5 @@ ls -la dist/
 
 echo "React deployment files ready for Liara!"
 echo "Upload the 'dist' folder contents to Liara React platform."
+echo ""
+echo "IMPORTANT: Make sure liara.json has 'platform: react' configured!"

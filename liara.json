@@ -1,8 +1,11 @@
 {
   "app": "pingotrip",
-  "port": 80,
+  "platform": "react",
   "build": {
     "location": "iran"
+  },
+  "nginx": {
+    "config": "nginx.conf"
   },
   "disks": []
 }
