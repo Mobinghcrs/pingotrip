@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 
 console.log('Server starting...');
 console.log('Current directory:', __dirname);
@@ -19,8 +19,8 @@ express.static.mime.define({
   'application/json': ['json']
 });
 
-// Serve static files from current directory (dist)
-app.use('/pingotrip', express.static(__dirname, {
+// Serve static files from dist directory
+app.use('/pingotrip', express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
     console.log('Serving file:', filePath);
     if (filePath.endsWith('.js') || filePath.endsWith('.mjs')) {
@@ -52,7 +52,7 @@ app.get('/pingotrip/health', (req, res) => {
 // SPA fallback - serve index.html for all routes
 app.get('/pingotrip/*', (req, res) => {
   console.log('SPA fallback for route:', req.path);
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Root redirect
