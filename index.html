@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pingo Trip | پینگو تریپ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+      body {
+        font-family: 'Vazirmatn', sans-serif;
+        background-color: #f8fafc; /* Use a lighter, cooler gray background for the app shell */
+        transition: background-color 0.3s ease;
+      }
+      html.dark body {
+        background-color: #020617; /* slate-950 */
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translate3d(0, -10px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      .animate-fade-in-down {
+        animation: fadeInDown 0.3s ease-out;
+      }
+      /* Custom scrollbar for sidebar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+      }
+       .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+      }
+      
+      /* Custom Admin Panel Styles */
+      .admin-bg {
+        background-color: #f1f5f9; /* slate-100 */
+      }
+      html.dark .admin-bg {
+        background-color: #0f172a; /* slate-900 */
+      }
+
+      @media (max-width: 767px) {
+        .responsive-table thead {
+          border: none;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+        
+        .responsive-table tr {
+          display: block;
+          margin-bottom: 1rem;
+          border-radius: 0.75rem;
+          border: 1px solid #e2e8f0;
+          background-color: #ffffff;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          overflow: hidden;
+        }
+        
+        html.dark .responsive-table tr {
+          border-color: #334155;
+          background-color: #1e293b;
+        }
+        
+        .responsive-table td {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.75rem 1rem;
+          text-align: right;
+          border-bottom: 1px solid #f1f5f9;
+        }
+        
+        html.dark .responsive-table td {
+          border-bottom-color: #334155;
+        }
+        
+        .responsive-table td:last-child {
+          border-bottom: 0;
+          padding: 0.5rem 1rem;
+          background-color: #f8fafc;
+        }
+
+        html.dark .responsive-table td:last-child {
+            background-color: #1e293b;
+        }
+        
+        .responsive-table td::before {
+          content: attr(data-label);
+          font-weight: 600;
+          color: #475569;
+        }
+
+        html.dark .responsive-table td::before {
+          color: #94a3b8;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.3",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "vite": "https://aistudiocdn.com/vite@^7.1.10",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.4"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
