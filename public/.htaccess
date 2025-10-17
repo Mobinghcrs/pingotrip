@@ -1,0 +1,72 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Handle MIME types for JavaScript modules
+<Files "*.js">
+    Header set Content-Type "application/javascript; charset=utf-8"
+</Files>
+
+<Files "*.mjs">
+    Header set Content-Type "application/javascript; charset=utf-8"
+</Files>
+
+# Handle MIME types for CSS
+<Files "*.css">
+    Header set Content-Type "text/css; charset=utf-8"
+</Files>
+
+# Handle MIME types for JSON
+<Files "*.json">
+    Header set Content-Type "application/json; charset=utf-8"
+</Files>
+
+# Handle MIME types for images
+<Files "*.png">
+    Header set Content-Type "image/png"
+</Files>
+
+<Files "*.jpg">
+    Header set Content-Type "image/jpeg"
+</Files>
+
+<Files "*.jpeg">
+    Header set Content-Type "image/jpeg"
+</Files>
+
+<Files "*.gif">
+    Header set Content-Type "image/gif"
+</Files>
+
+<Files "*.svg">
+    Header set Content-Type "image/svg+xml"
+</Files>
+
+# Handle MIME types for fonts
+<Files "*.woff">
+    Header set Content-Type "font/woff"
+</Files>
+
+<Files "*.woff2">
+    Header set Content-Type "font/woff2"
+</Files>
+
+<Files "*.ttf">
+    Header set Content-Type "font/ttf"
+</Files>
+
+# SPA fallback - redirect all requests to index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /pingotrip/index.html [L]
+
+# Cache static assets
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, immutable"
+</FilesMatch>
+
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"

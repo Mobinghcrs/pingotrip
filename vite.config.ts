@@ -6,4 +6,16 @@ export default defineConfig({
   plugins: [react()],
   // Set the base path for deployment to match Liara app name
   base: '/pingotrip/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  server: {
+    port: 3000,
+  },
 });

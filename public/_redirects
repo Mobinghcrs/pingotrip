@@ -1,0 +1,5 @@
+# Redirect all requests to index.html for SPA routing
+/pingotrip/* /pingotrip/index.html 200
+
+# Handle static assets
+/pingotrip/assets/* /pingotrip/assets/:splat 200
