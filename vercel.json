@@ -1,13 +1,13 @@
 {
   "rewrites": [
     {
-      "source": "/pingotrip/(.*)",
-      "destination": "/pingotrip/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
     {
-      "source": "/pingotrip/assets/(.*\\.js)",
+      "source": "/assets/(.*\\.js)",
       "headers": [
         {
           "key": "Content-Type",
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "source": "/pingotrip/assets/(.*\\.mjs)",
+      "source": "/assets/(.*\\.mjs)",
       "headers": [
         {
           "key": "Content-Type",
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "source": "/pingotrip/assets/(.*\\.css)",
+      "source": "/assets/(.*\\.css)",
       "headers": [
         {
           "key": "Content-Type",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "source": "/pingotrip/assets/(.*\\.json)",
+      "source": "/assets/(.*\\.json)",
       "headers": [
         {
           "key": "Content-Type",
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "source": "/pingotrip/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "X-Content-Type-Options",

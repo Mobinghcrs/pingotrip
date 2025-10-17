@@ -11,8 +11,8 @@ export default defineConfig({
       jsxRuntime: 'automatic',
     })
   ],
-  // Set the base path for deployment to match Liara app name
-  base: '/pingotrip/',
+  // Remove base path for root deployment
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
